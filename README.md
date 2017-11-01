@@ -5,7 +5,7 @@
 2. Create una cartella da qualche parte. Conterrà i file che sono nel repository
 3. Aprite Github shell e arrivate con "cd" nella cartella che avete creato
 4. Nella shell digitate "git init"
-5. Nella shell eseguite "git remote add origin "
+5. Nella shell eseguite "git remote add origin https://github.com/giuseppemas/gruppo_3_TdP"
 6. Eseguire "git pull" per mettervi in locale tutti i file che sono attualmente sul repository
 7. Modificate il progetto
 8. Eseguire "git add *" per rimettere tutti i file (includendo le modifiche) sul repository
