@@ -6,4 +6,4 @@ complessità di tempo O(1), senza aumentare la complessità di tempo di tutti 
 '''
 
 class MyTreeMap(tree):
-
+    pass
