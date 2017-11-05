@@ -6,4 +6,9 @@ complessità di tempo O(1), senza aumentare la complessità di tempo di tutti 
 '''
 
 class MyTreeMap(TreeMap):
+    
+    def after(self, p):
+        pass
+    
+    def before(self, p):
     pass
