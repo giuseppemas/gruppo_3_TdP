@@ -12,3 +12,11 @@ class MyTreeMap(TreeMap):
     
     def before(self, p):
         pass
+
+    def __str__(self):
+        s = ''
+        for i in self:
+            s += str(i)
+            s += '  '
+
+        return s
