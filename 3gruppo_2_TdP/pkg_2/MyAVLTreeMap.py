@@ -58,7 +58,7 @@ class MyAVLTreeMap(MyTreeMap):
     # --------------------- overriding balancing hooks ---------------------
 
     def _rebalance_insert(self, p):
-    """Call to indicate that position p is newly added."""
+        """Call to indicate that position p is newly added."""
         self._rebalance(p)
 
     def _rebalance_delete(self, p):
@@ -70,12 +70,12 @@ class MyAVLTreeMap(MyTreeMap):
     # --------------------- public methods providing "positional" support ---------------------
 
     def first(self):
-    """Return the first Position in the tree (or None if empty)."""
-        pass
+        """Return the first Position in the tree (or None if empty)."""
+        return self._subtree_first_position(self.root()) if len(self) > 0 else None
 
     def last(self):
         """Return the last Position in the tree (or None if empty)."""
-        pass
+        return self._subtree_last_position(self.root()) if len(self) > 0 else None
 
     def before(self, p):
         """Return the Position just before p in the natural order.
@@ -91,63 +91,119 @@ class MyAVLTreeMap(MyTreeMap):
 
     def find_position(self, k):
         """Return position with key k, or else neighbor (or None if empty)."""
-        pass
+        if self.is_empty():
+            return None
+        else:
+            p = self._subtree_search(self.root(), k)
+            self._rebalance_access(p)  # hook for balanced tree subclasses
+            return p
 
     def delete(self, p):
-        """Remove the item at given Position."""
-        pass
+        self._validate(p)                            # inherited from LinkedBinaryTree
+        if self.left(p) and self.right(p):           # p has two children
+            replacement = self._subtree_last_position(self.left(p))
+            self._replace(p, replacement.element())    # from LinkedBinaryTree
+            p =  replacement
+        # now p has at most one child
+        parent = self.parent(p)
+        self._delete(p)                              # inherited from LinkedBinaryTree
+        self._rebalance_delete(parent)
 
     # --------------------- public methods for (standard) map interface ---------------------
 
     def __delitem__(self, k):
         """Remove item associated with key k (raise KeyError if not found)."""
-        pass
+        if not self.is_empty():
+            p = self._subtree_search(self.root(), k)
+            if k == p.key():
+                self.delete(p)  # rely on positional version
+                return  # successful deletion complete
+            self._rebalance_access(p)  # hook for balanced tree subclasses
+        raise KeyError('Key Error: ' + repr(k))
 
     def __iter__(self):
         """Generate an iteration of all keys in the map in order."""
-        pass
+        p = self.first()
+        while p is not None:
+            yield p.key()
+            p = self.after(p)
 
     # --------------------- public methods for sorted map interface ---------------------
 
     def __reversed__(self):
         """Generate an iteration of all keys in the map in reverse order."""
-        pass
+        p = self.last()
+        while p is not None:
+            yield p.key()
+            p = self.before(p)
 
     def find_min(self):
         """Return (key,value) pair with minimum key (or None if empty)."""
-        pass
+        if self.is_empty():
+            return None
+        else:
+            p = self.first()
+            return (p.key(), p.value())
 
     def find_max(self):
         """Return (key,value) pair with maximum key (or None if empty)."""
-        pass
+        if self.is_empty():
+            return None
+        else:
+            p = self.last()
+            return (p.key(), p.value())
 
     def find_le(self, k):
         """Return (key,value) pair with greatest key less than or equal to k.
             
         Return None if there does not exist such a key.
         """
-        pass
+        if self.is_empty():
+            return None
+        else:
+            p = self.find_position(k)
+            if k < p.key():
+                p = self.before(p)
+            return (p.key(), p.value()) if p is not None else None
 
     def find_lt(self, k):
         """Return (key,value) pair with greatest key strictly less than k.
         
         Return None if there does not exist such a key.
         """
-        pass
+        if self.is_empty():
+            return None
+        else:
+            p = self.find_position(k)
+            if not p.key() < k:
+                p = self.before(p)
+            return (p.key(), p.value()) if p is not None else None
 
     def find_ge(self, k):
         """Return (key,value) pair with least key greater than or equal to k.
             
         Return None if there does not exist such a key.
         """
-        pass
+        if self.is_empty():
+            return None
+        else:
+            p = self.find_position(k)  # may not find exact match
+            if p.key() < k:  # p's key is too small
+                p = self.after(p)
+            return (p.key(), p.value()) if p is not None else None
 
     def find_gt(self, k):
         """Return (key,value) pair with least key strictly greater than k.
         
         Return None if there does not exist such a key.
         """
-        pass
+        if self.is_empty():
+            return None
+        else:
+            p = self.find_position(k)
+            if not k < p.key():
+                p = self.after(p)
+            return (p.key(), p.value()) if p is not None else None
 
     def find_range(self, start, stop):
         """Iterate all (key,value) pairs such that start <= key < stop.
@@ -155,15 +211,26 @@ class MyAVLTreeMap(MyTreeMap):
         If start is None, iteration begins with minimum key of map.
         If stop is None, iteration continues through the maximum key of map.
         """
-        pass
+        if not self.is_empty():
+            if start is None:
+                p = self.first()
+            else:
+                # we initialize p with logic similar to find_ge
+                p = self.find_position(start)
+                if p.key() < start:
+                    p = self.after(p)
+            while p is not None and (stop is None or p.key() < stop):
+                yield (p.key(), p.value())
+                p = self.after(p)
 
     # --------------------- public methods for avl interface ---------------------
 
     def insert (self, k):
-        pass
+        self.__setitem__(k, None)
     
     def remove (self, k):
-        pass
+        self.__delitem__(k)
     
     def search_inorder (self, p): #?
+
         pass
