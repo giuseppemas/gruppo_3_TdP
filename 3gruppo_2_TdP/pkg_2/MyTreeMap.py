@@ -58,6 +58,8 @@ class MyTreeMap(TreeMap):
                         p._node._afterpos = leaf
                         leaf._node._beforepos = self.parent(leaf)
                         #print("beaforefoglia", leaf._node._beforepos.key(), "foglia", leaf.key())
+                        self._rebalance_insert(leaf)
+                        p = self.right(p)
                     else:
                         if p._node._afterpos.key()>k:
                             p._node._afterpos = self._make_position(node)
@@ -69,13 +71,34 @@ class MyTreeMap(TreeMap):
                         p._node._beforepos = leaf
                         leaf._node._afterpos = self.parent(leaf)
                         #print("afterfoglia", leaf._node._afterpos.key(), "foglia", leaf.key())
+                        self._rebalance_insert(leaf)
+                        p = self.left(p)
                     else:
                         if p._node._beforepos.key()<k:
                             p._node._beforepos = self._make_position(node)
                             p._node._beforepos._node._afterpos = p
                         p = self.left(p)
-            self._rebalance_insert(leaf)
 
+    def __delitem__(self, k):
+        """Remove item associated with key k (raise KeyError if not found)."""
+        if not self.is_empty():
+            p = self._subtree_search(self.root(), k)
+            if k == p.key():
+                if p._node._afterpos is None:
+                    p._node._beforepos._node._afterpos = None
+                elif p._node._beforepos is None:
+                    p._node._afterpos._node._beforepos = None
+                else:
+                    if self.left(p) and self.right(p):
+                        p._node._afterpos._node._beforepos = p._node._beforepos
+                        p._node._beforepos= p._node._beforepos._node._beforepos
+                    else:
+                        p._node._afterpos._node._beforepos = p._node._beforepos
+                        p._node._beforepos._node._afterpos = p._node._afterpos
+                self.delete(p)  # rely on positional version
+                return  # successful deletion complete
+            self._rebalance_access(p)  # hook for balanced tree subclasses
+        raise KeyError('Key Error: ' + repr(k))
 
     def after(self, p):
         """returns to the successor's position"""
@@ -95,11 +118,15 @@ class MyTreeMap(TreeMap):
 
 
 #################TEST#######################
-
+print("TEST MYTREEMAP -- AFTER -- BEFORE...")
 t = MyTreeMap()
-chiavi = [5,2,12,1,3,15,8,7,11,10]
+chiavi = [5,2,12,1,3,15,8,7,11,10,9]
 for i in range(len(chiavi)):
     t.__setitem__(chiavi[i],i*i)
+
+for k in t.preorder():
+    print(k.key(), end=" ")
+print("\n")
 
 for k in t.inorder():
     p = t.find_position(k.key())
@@ -112,4 +139,30 @@ for k in t.inorder():
     else:
         print("result before", resultbefore.key(), "Position", p.key(), "result after", resultafter.key())
 
+print("\n--Test TreeMap delitem--")
+t.__delitem__(9)
+p1=t.find_position(10)
+p2=t.find_position(8)
+for k in t.preorder():
+    print(k.key(), end=" ")
+print("\n")
 
+resultafter = t.after(p1)
+resultbefore = t.before(p1)
+if resultafter == None:
+    print("result before", resultbefore.key(), "Position", p1.key(), "result after", resultafter)
+elif resultbefore == None:
+    print("result before", resultbefore, "Position", p1.key(), "result after", resultafter.key())
+else:
+    print("result before", resultbefore.key(), "Position", p1.key(), "result after", resultafter.key())
+
+resultafter = t.after(p2)
+resultbefore = t.before(p2)
+if resultafter == None:
+    print("result before", resultbefore.key(), "Position", p2.key(), "result after", resultafter)
+elif resultbefore == None:
+    print("result before", resultbefore, "Position", p2.key(), "result after", resultafter.key())
+else:
+    print("result before", resultbefore.key(), "Position", p2.key(), "result after", resultafter.key())
+
+print("\n\n")

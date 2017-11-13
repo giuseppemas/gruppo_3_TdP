@@ -1,5 +1,4 @@
-from .MyTreeMap import MyTreeMap
-
+from pkg_2.MyTreeMap import MyTreeMap
 '''
     Progettare la classe MyAVLTreeMap, derivata da MyTreeMap, che implementa tutti i metodi della classe padre garantendo
     almeno le stesse complessità di tempo di AVLTreeMap.
@@ -20,15 +19,15 @@ class MyAVLTreeMap(MyTreeMap):
             return self._left._height if self._left is not None else 0
         
         def right_height(self):
-            return self._right._height if self._height is not None else 0
+            return self._right._height if self._right is not None else 0
     
     # --------------------- positional-based private methods ---------------------
     
     def _recompute_height(self, p):
-        p._node._height = 1 + max(p._node._left_height(), p._node.right_height())
+        p._node._height = 1 + max(p._node.left_height(), p._node.right_height())
     
     def _isbalanced(self, p):
-        return abs(p._node.left_height() - p._node._right_height()) <= 1
+        return abs(p._node.left_height() - p._node.right_height()) <= 1
     
     def _tall_child(self, p, favorleft=False): #this parameter controls tiebrecker (spareggio)
         if p._node.left_height() + (1 if favorleft else 0) > p._node.right_height():
@@ -40,7 +39,7 @@ class MyAVLTreeMap(MyTreeMap):
         child = self._tall_child(p)
         #if child is on left, favor left grandchild; else favor right grandchild
         alignment = (child == self.left(p))
-        return self._tall._child(child, alignment) #in this case we have a favorleft != False
+        return self._tall_child(child, alignment) #in this case we have a favorleft != False
     
     def _rebalance(self, p):
         while p is not None:
@@ -65,6 +64,7 @@ class MyAVLTreeMap(MyTreeMap):
         """Call to indicate that a child of p has been removed."""
         self._rebalance(p)
 
+
     # --------------------- OVERRIDING PARENT METHODS ---------------------
 
     # --------------------- public methods providing "positional" support ---------------------
@@ -76,18 +76,6 @@ class MyAVLTreeMap(MyTreeMap):
     def last(self):
         """Return the last Position in the tree (or None if empty)."""
         return self._subtree_last_position(self.root()) if len(self) > 0 else None
-
-    def before(self, p):
-        """Return the Position just before p in the natural order.
-        Return None if p is the first position.
-        """
-        pass
-
-    def after(self, p):
-        """Return the Position just after p in the natural order.
-        Return None if p is the last position.
-        """
-        pass
 
     def find_position(self, k):
         """Return position with key k, or else neighbor (or None if empty)."""
@@ -116,6 +104,17 @@ class MyAVLTreeMap(MyTreeMap):
         if not self.is_empty():
             p = self._subtree_search(self.root(), k)
             if k == p.key():
+                if p._node._afterpos is None:
+                    p._node._beforepos._node._afterpos = None
+                elif p._node._beforepos is None:
+                    p._node._afterpos._node._beforepos = None
+                else:
+                    if self.left(p) and self.right(p):
+                        p._node._afterpos._node._beforepos = p._node._beforepos
+                        p._node._beforepos= p._node._beforepos._node._beforepos
+                    else:
+                        p._node._afterpos._node._beforepos = p._node._beforepos
+                        p._node._beforepos._node._afterpos = p._node._afterpos
                 self.delete(p)  # rely on positional version
                 return  # successful deletion complete
             self._rebalance_access(p)  # hook for balanced tree subclasses
@@ -128,6 +127,46 @@ class MyAVLTreeMap(MyTreeMap):
             yield p.key()
             p = self.after(p)
 
+    def __setitem__(self, k, v):
+        if self.is_empty():
+            leaf = self._add_root(self._Item(k, v))  # from LinkedBinaryTree
+        else:
+            p = self.root()
+            item = self._Item(k, v)
+            node = self._Node(item)
+            leaf=None
+            while p is not None:
+                if p.key() == k:
+                    p.element()._value = v  # replace existing item's value
+                    self._rebalance_access(p)  # hook for balanced tree subclasses
+                    return
+                elif p.key() < k:
+                    if self.right(p) is None:
+                        leaf = self._add_node_right(p, node)
+                        p._node._afterpos = leaf
+                        leaf._node._beforepos = self.parent(leaf)
+
+                        # print("beaforefoglia", leaf._node._beforepos.key(), "foglia", leaf.key())
+                        self._rebalance_insert(leaf)
+                        p=self.right(p)
+                    else:
+                        if p._node._afterpos.key() > k:
+                            p._node._afterpos = self._make_position(node)
+                            p._node._afterpos._node._beforepos = p
+                        p = self.right(p)
+                else:
+                    if self.left(p) is None:
+                        leaf = self._add_node_left(p, node)
+                        p._node._beforepos = leaf
+                        leaf._node._afterpos = self.parent(leaf)
+                        # print("afterfoglia", leaf._node._afterpos.key(), "foglia", leaf.key())
+                        self._rebalance_insert(leaf)
+                        p=self.left(p)
+                    else:
+                        if p._node._beforepos.key() < k:
+                            p._node._beforepos = self._make_position(node)
+                            p._node._beforepos._node._afterpos = p
+                        p = self.left(p)
     # --------------------- public methods for sorted map interface ---------------------
 
     def __reversed__(self):
@@ -223,14 +262,81 @@ class MyAVLTreeMap(MyTreeMap):
                 yield (p.key(), p.value())
                 p = self.after(p)
 
-    # --------------------- public methods for avl interface ---------------------
 
-    def insert (self, k):
-        self.__setitem__(k, None)
-    
-    def remove (self, k):
-        self.__delitem__(k)
-    
-    def search_inorder (self, p): #?
+################TEST#######################
+print("##########---TEST MYAVLTREEMAP---###########")
+t1 = MyAVLTreeMap()
+chiavi = [5,2,12,1,3,15,8,7,11,10,9]
+for i in range(len(chiavi)):
+    t1.__setitem__(chiavi[i],i*i)
 
-        pass
+
+for k in t1.inorder():
+    p = t1.find_position(k.key())
+    resultafter = t1.after(p)
+    resultbefore = t1.before(p)
+    if resultafter == None:
+        print("result before", resultbefore.key(), "Position", p.key(), "result after", resultafter)
+    elif resultbefore == None:
+        print("result before", resultbefore, "Position", p.key(), "result after", resultafter.key())
+    else:
+        print("result before", resultbefore.key(), "Position", p.key(), "result after", resultafter.key())
+
+
+for k in t1.preorder():
+    print(k.key(), end=" ")
+print("\n")
+
+print("--Test AvlTreeMap delitem--")
+t1.__delitem__(9)
+print("delete 9")
+p1=t1.find_position(10)
+p2=t1.find_position(8)
+for k in t1.preorder():
+    print(k.key(), end=" ")
+print("\n")
+
+resultafter = t1.after(p1)
+resultbefore = t1.before(p1)
+if resultafter == None:
+    print("result before", resultbefore.key(), "Position", p1.key(), "result after", resultafter)
+elif resultbefore == None:
+    print("result before", resultbefore, "Position", p1.key(), "result after", resultafter.key())
+else:
+    print("result before", resultbefore.key(), "Position", p1.key(), "result after", resultafter.key())
+
+resultafter = t1.after(p2)
+resultbefore = t1.before(p2)
+if resultafter == None:
+    print("result before", resultbefore.key(), "Position", p2.key(), "result after", resultafter)
+elif resultbefore == None:
+    print("result before", resultbefore, "Position", p2.key(), "result after", resultafter.key())
+else:
+    print("result before", resultbefore.key(), "Position", p2.key(), "result after", resultafter.key())
+
+print("--Test First Avl--")
+print(t1.first().key())
+print("-- Test last avl--")
+print(t1.last().key())
+print("--Test Iter Avl--")
+for i in t1:
+    print(i , end=" ")
+
+print("\n-- Test Reversed AVL --")
+for i in t1.__reversed__():
+    print(i, end=" ")
+print("\n--Test find min AVL--")
+print("key: ", t1.find_min()[0], "value: ", t1.find_min()[1])
+print("--Test find max AVL--")
+print("key: ", t1.find_max()[0], "value: ", t1.find_max()[1])
+print("--Test find le AVL--")
+print("key: ", t1.find_le(8)[0], "value: ", t1.find_le(8)[1])
+print("--Test find lt AVL--")
+print("key: ", t1.find_lt(8)[0], "value: ", t1.find_lt(8)[1])
+print("--Test find ge AVL--")
+print("key: ", t1.find_ge(8)[0], "value: ", t1.find_ge(8)[1])
+print("--Test find gt AVL--")
+print("key: ", t1.find_gt(8)[0], "value: ", t1.find_gt(8)[1])
+print("--Test find range AVL--")
+for item in t1.find_range(3,12):
+    print("key: ", item[0], "value: ", item[1])
