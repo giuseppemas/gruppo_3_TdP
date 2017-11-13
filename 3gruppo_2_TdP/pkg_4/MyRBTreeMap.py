@@ -1,8 +1,8 @@
 from TdP_collections.map.red_black_tree import RedBlackTreeMap
 
 '''
-    Progettare la classe MyRBTreeMap che estende RBTreeMap aggiungendo due metodi: split() e fusion().
-    '''
+Progettare la classe MyRBTreeMap che estende RBTreeMap aggiungendo due metodi: split() e fusion().
+'''
 
 class MyRedBlackTreeMap(RedBlackTreeMap):
     
@@ -25,4 +25,27 @@ class MyRedBlackTreeMap(RedBlackTreeMap):
             (Domanda bonus 3 punti extra: fornire un’implementazione di fusion() con complessità di tempo di
             O( log n + log m), dove n sono le chiavi dell’albero T e m sono le chiavi dell’albero T1).
             """
-    pass
+        maxT = self.find_max()
+        
+        if not T1.is_empty():
+            for p in T1._subtree_inorder(T1.root):
+                yield p
+                self.check_or_insert(p, maxT)
+
+
+    ''' si potrebbe fare in modo ricorsivo?
+    if T1._is_leaf:
+        if T1._element > maxT :
+            return self.__setitem__(len(self), T1._element)
+        else:
+            raise ValueError("An element of T1 is less or equal to T element")
+    else:
+        fusion(T1.root.left) ?
+        fusion(T1.root.right) ?
+    '''
+        
+    def check_or_insert (self, entry, maxT):
+        if entry.value() > maxT.value():
+            return self.__setitem__(len(self), entry.value())
+        else:
+            raise ValueError("An element of T1 is less or equal to T element")
