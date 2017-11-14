@@ -143,6 +143,7 @@ class MyAVLTreeMap(MyTreeMap):
                 elif p.key() < k:
                     if self.right(p) is None:
                         leaf = self._add_node_right(p, node)
+                        #print("id foglia k>", id(leaf))
                         p._node._afterpos = leaf
                         leaf._node._beforepos = self.parent(leaf)
 
@@ -152,11 +153,13 @@ class MyAVLTreeMap(MyTreeMap):
                     else:
                         if p._node._afterpos.key() > k:
                             p._node._afterpos = self._make_position(node)
+                            #print("id insert k>",id(p._node._afterpos))
                             p._node._afterpos._node._beforepos = p
                         p = self.right(p)
                 else:
                     if self.left(p) is None:
                         leaf = self._add_node_left(p, node)
+                        #print("id foglia k<", id(leaf))
                         p._node._beforepos = leaf
                         leaf._node._afterpos = self.parent(leaf)
                         # print("afterfoglia", leaf._node._afterpos.key(), "foglia", leaf.key())
@@ -165,6 +168,7 @@ class MyAVLTreeMap(MyTreeMap):
                     else:
                         if p._node._beforepos.key() < k:
                             p._node._beforepos = self._make_position(node)
+                            #print("id insert k<",id(p._node._beforepos))
                             p._node._beforepos._node._afterpos = p
                         p = self.left(p)
     # --------------------- public methods for sorted map interface ---------------------
