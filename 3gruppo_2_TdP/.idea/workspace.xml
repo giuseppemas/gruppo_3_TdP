@@ -11,18 +11,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="binary_search_tree.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TdP_collections/map/binary_search_tree.py">
+      <file leaf-file-name="MyRBTreeMap.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pkg_4/MyRBTreeMap.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4624">
-              <caret line="273" column="6" lean-forward="false" selection-start-line="273" selection-start-column="6" selection-end-line="273" selection-end-column="6" />
-              <folding>
-                <element signature="e#861#915#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="323">
+              <caret line="19" column="25" lean-forward="true" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="MyRBTreeMap.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pkg_4/MyRBTreeMap.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -32,6 +31,26 @@
                 <element signature="e#6279#7241#0" expanded="false" />
                 <element signature="e#7278#9803#0" expanded="false" />
                 <element signature="e#9870#10790#0" expanded="false" />
+=======
+      <file leaf-file-name="prova_sperimentale.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pkg_1/prova_sperimentale.py">
+          <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="150">
+              <caret line="62" column="6" lean-forward="false" selection-start-line="62" selection-start-column="6" selection-end-line="62" selection-end-column="6" />
+              <folding>
+                <element signature="e#0#51#0" expanded="true" />
+=======
+            <state relative-caret-position="1734">
+              <caret line="284" column="41" lean-forward="true" selection-start-line="284" selection-start-column="41" selection-end-line="284" selection-end-column="41" />
+              <folding>
+                <element signature="e#5036#5407#0" expanded="false" />
+                <element signature="e#5448#5822#0" expanded="false" />
+                <element signature="e#5870#6832#0" expanded="false" />
+                <element signature="e#6869#9394#0" expanded="false" />
+                <element signature="e#9461#10381#0" expanded="false" />
+>>>>>>> ef4552012d49d4868f57482d33f2b3ef520b6549
+>>>>>>> bddeb7a820e399ce68b92175434c4076abd942dc
               </folding>
             </state>
           </provider>
@@ -40,9 +59,17 @@
       <file leaf-file-name="linked_binary_tree.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TdP_collections/tree/linked_binary_tree.py">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="1394">
+              <caret line="82" column="60" lean-forward="false" selection-start-line="82" selection-start-column="52" selection-end-line="82" selection-end-column="60" />
+              <folding>
+                <marker date="1510757133465" expanded="true" signature="5179:6719" ph="..." />
+              </folding>
+=======
             <state relative-caret-position="549">
               <caret line="96" column="0" lean-forward="false" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
               <folding />
+>>>>>>> ef4552012d49d4868f57482d33f2b3ef520b6549
             </state>
           </provider>
         </entry>
@@ -108,6 +135,7 @@
         <option value="$PROJECT_DIR$/TdP_collections/map/binary_search_tree.py" />
         <option value="$PROJECT_DIR$/pkg_2/MyTreeMap.py" />
         <option value="$PROJECT_DIR$/pkg_4/MyRBTreeMap.py" />
+        <option value="$PROJECT_DIR$/pkg_1/prova_sperimentale.py" />
       </list>
     </option>
   </component>
@@ -143,11 +171,6 @@
             <path>
               <item name="3gruppo_2_TdP" type="b2602c69:ProjectViewProjectNode" />
               <item name="3gruppo_2_TdP" type="462c0819:PsiDirectoryNode" />
-              <item name="pkg_4" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="3gruppo_2_TdP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="3gruppo_2_TdP" type="462c0819:PsiDirectoryNode" />
               <item name="TdP_collections" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -178,7 +201,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.MyRBTreeMap">
+  <component name="RunManager" selected="Python.prova_sperimentale">
     <configuration name="MyAVLTreeMap" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -264,19 +287,38 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <list size="5">
+    <configuration name="prova_sperimentale" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pkg_1" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="3gruppo_2_TdP" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pkg_1/prova_sperimentale.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Python.MyRBTreeMap" />
       <item index="1" class="java.lang.String" itemvalue="Python.MyTreeMap_LCA" />
       <item index="2" class="java.lang.String" itemvalue="Python.MyTreeMap" />
       <item index="3" class="java.lang.String" itemvalue="Python.MyAVLTreeMap" />
       <item index="4" class="java.lang.String" itemvalue="Python.binary_tree" />
+      <item index="5" class="java.lang.String" itemvalue="Python.prova_sperimentale" />
     </list>
     <recent_temporary>
-      <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="Python.MyAVLTreeMap" />
-        <item index="1" class="java.lang.String" itemvalue="Python.MyTreeMap" />
-        <item index="2" class="java.lang.String" itemvalue="Python.binary_tree" />
-        <item index="3" class="java.lang.String" itemvalue="Python.MyTreeMap_LCA" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Python.prova_sperimentale" />
+        <item index="1" class="java.lang.String" itemvalue="Python.MyAVLTreeMap" />
+        <item index="2" class="java.lang.String" itemvalue="Python.MyTreeMap" />
+        <item index="3" class="java.lang.String" itemvalue="Python.binary_tree" />
+        <item index="4" class="java.lang.String" itemvalue="Python.MyTreeMap_LCA" />
       </list>
     </recent_temporary>
   </component>
@@ -295,18 +337,25 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26573938" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2655068" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6687697" sideWeight="0.5058565" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37091503" sideWeight="0.4941435" order="10" side_tool="true" content_ui="tabs" x="-245" y="236" width="1366" height="714" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.52781844" sideWeight="0.4941435" order="4" side_tool="true" content_ui="tabs" x="-245" y="236" width="1366" height="714" />
+=======
+<<<<<<< HEAD
+=======
+      <window_info id="Run" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.52781844" sideWeight="0.4941435" order="4" side_tool="true" content_ui="tabs" x="-245" y="236" width="1366" height="714" />
+>>>>>>> ef4552012d49d4868f57482d33f2b3ef520b6549
+>>>>>>> bddeb7a820e399ce68b92175434c4076abd942dc
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39905363" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -356,7 +405,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1326">
           <caret line="78" column="34" lean-forward="true" selection-start-line="78" selection-start-column="34" selection-end-line="78" selection-end-column="34" />
+<<<<<<< HEAD
+          <folding>
+            <marker date="1510757133465" expanded="true" signature="5179:6719" ph="..." />
+          </folding>
+=======
           <folding />
+>>>>>>> ef4552012d49d4868f57482d33f2b3ef520b6549
         </state>
       </provider>
     </entry>
@@ -429,7 +484,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1479">
           <caret line="87" column="22" lean-forward="false" selection-start-line="87" selection-start-column="22" selection-end-line="87" selection-end-column="22" />
+<<<<<<< HEAD
+          <folding>
+            <marker date="1510757133465" expanded="true" signature="5179:6719" ph="..." />
+          </folding>
+=======
           <folding />
+>>>>>>> ef4552012d49d4868f57482d33f2b3ef520b6549
         </state>
       </provider>
     </entry>
@@ -477,7 +538,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2244">
           <caret line="132" column="20" lean-forward="false" selection-start-line="132" selection-start-column="20" selection-end-line="132" selection-end-column="20" />
+<<<<<<< HEAD
+          <folding>
+            <marker date="1510757133465" expanded="true" signature="5179:6719" ph="..." />
+          </folding>
+=======
           <folding />
+>>>>>>> ef4552012d49d4868f57482d33f2b3ef520b6549
         </state>
       </provider>
     </entry>
@@ -518,7 +585,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+<<<<<<< HEAD
+          <folding>
+            <marker date="1510757133465" expanded="true" signature="5179:6719" ph="..." />
+          </folding>
+=======
           <folding />
+>>>>>>> ef4552012d49d4868f57482d33f2b3ef520b6549
         </state>
       </provider>
     </entry>
@@ -548,7 +621,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="4" lean-forward="true" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
+<<<<<<< HEAD
+          <folding>
+            <marker date="1510757133465" expanded="true" signature="5179:6719" ph="..." />
+          </folding>
+=======
           <folding />
+>>>>>>> ef4552012d49d4868f57482d33f2b3ef520b6549
         </state>
       </provider>
     </entry>
@@ -588,7 +667,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="24" lean-forward="true" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+<<<<<<< HEAD
+          <folding>
+            <marker date="1510757133465" expanded="true" signature="5179:6719" ph="..." />
+          </folding>
+=======
           <folding />
+>>>>>>> ef4552012d49d4868f57482d33f2b3ef520b6549
         </state>
       </provider>
     </entry>
@@ -599,7 +684,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pkg_1/prova_sperimentale_alfonso.py">
+    <entry file="file://$PROJECT_DIR$/pkg_1/prova_sperimentale.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
@@ -627,13 +712,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pkg_1/prova_sperimentale_alfonso.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -699,6 +777,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pkg_4/MyRBTreeMap.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="294">
           <caret line="47" column="39" lean-forward="true" selection-start-line="47" selection-start-column="39" selection-end-line="47" selection-end-column="39" />
           <folding>
@@ -706,6 +785,17 @@
             <element signature="e#7278#9803#0" expanded="false" />
             <element signature="e#9870#10790#0" expanded="false" />
           </folding>
+=======
+        <state relative-caret-position="-267">
+          <caret line="82" column="60" lean-forward="false" selection-start-line="82" selection-start-column="52" selection-end-line="82" selection-end-column="60" />
+<<<<<<< HEAD
+          <folding>
+            <marker date="1510757133465" expanded="true" signature="5179:6719" ph="..." />
+          </folding>
+=======
+          <folding />
+>>>>>>> ef4552012d49d4868f57482d33f2b3ef520b6549
+>>>>>>> bddeb7a820e399ce68b92175434c4076abd942dc
         </state>
       </provider>
     </entry>
@@ -727,17 +817,52 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/TdP_collections/tree/binary_tree.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="4539">
+          <caret line="279" column="8" lean-forward="true" selection-start-line="279" selection-start-column="8" selection-end-line="279" selection-end-column="8" />
+          <folding>
+            <element signature="e#861#915#0" expanded="true" />
+          </folding>
+=======
         <state relative-caret-position="549">
           <caret line="68" column="0" lean-forward="false" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
           <folding />
+>>>>>>> ef4552012d49d4868f57482d33f2b3ef520b6549
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/TdP_collections/map/red_black_tree.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="314">
           <caret line="65" column="30" lean-forward="false" selection-start-line="65" selection-start-column="30" selection-end-line="65" selection-end-column="30" />
           <folding />
+=======
+<<<<<<< HEAD
+        <state relative-caret-position="323">
+          <caret line="19" column="25" lean-forward="true" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg_1/prova_sperimentale.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="62" column="6" lean-forward="false" selection-start-line="62" selection-start-column="6" selection-end-line="62" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+=======
+        <state relative-caret-position="1734">
+          <caret line="284" column="41" lean-forward="true" selection-start-line="284" selection-start-column="41" selection-end-line="284" selection-end-column="41" />
+          <folding>
+            <element signature="e#5036#5407#0" expanded="false" />
+            <element signature="e#5448#5822#0" expanded="false" />
+            <element signature="e#5870#6832#0" expanded="false" />
+            <element signature="e#6869#9394#0" expanded="false" />
+            <element signature="e#9461#10381#0" expanded="false" />
+>>>>>>> ef4552012d49d4868f57482d33f2b3ef520b6549
+          </folding>
+>>>>>>> bddeb7a820e399ce68b92175434c4076abd942dc
         </state>
       </provider>
     </entry>

@@ -153,24 +153,25 @@ print("\nEFFICIENZA SULl'INSERIMENTO QUASI ORDINATO IN SECONDI:")
 avl = MyAVLTreeMap()
 rb = MyRedBlackTreeMap()
 
-inizio_avl = time.clock()
+x = list()
+
 for i in range(N):
     if i%d == 0:
-        x = random.randint(N,N+range_d)
-        avl.__setitem__(x, x)
+        x.append(random.randint(N,N+range_d))
     else:
-        avl.__setitem__(i, i)
+        x.append(i)
+
+inizio_avl = time.clock()
+for i in range(N):
+    avl.__setitem__(x[i],x[i])
 
 fine_avl = time.clock()
 t_avl = fine_avl-inizio_avl
 
 inizio_rb = time.clock()
 for i in range(N):
-    if i%d == 0:
-        x = random.randint(N,N+range_d)
-        rb.__setitem__(x, x)
-    else:
-        rb.__setitem__(i, i)
+        rb.__setitem__(x[i], x[i])
+
 fine_rb = time.clock()
 t_rb = fine_rb-inizio_rb
 
