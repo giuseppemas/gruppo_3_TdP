@@ -199,9 +199,6 @@ for j in t2.inorder():
     print(j.key(),t2._is_red(j), end="; ")
 print("\n")
 
-
-
-
 print("t4")
 for i in t4.inorder():
     print(i.key(), t4._is_red(i),end="; ")
