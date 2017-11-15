@@ -56,7 +56,7 @@ class MyRedBlackTreeMap(RedBlackTreeMap):
                             print("T2 root: ", T2.root().key())
                             T2._root._red = False
                             ultimateT2 = T2.root()
-                            blackD_T2 = T2.max_blackdep(walk)[1]
+                            blackD_T2 = T2.max_blackdep(ultimateT2)[1]
                             T2._size =1
                         else:
                             ultimateT2 = walk
@@ -95,7 +95,9 @@ class MyRedBlackTreeMap(RedBlackTreeMap):
 
         print("FINE WHILE\n")
         if self.right(walk) is not None:
-            ultimateT2._node._left = walk._node._right
+            if T2.root() is None:
+                pass
+            ultimateT2._node._left = walk._node._right #NON ASSEGNAMO LA T2.root
             walk._node._right._parent = ultimateT2._node
             print("T1 nodo right, left: ", walk.key(), T1.right(T1.root()).key(), T1.left(T1.root()).key())
             print("T2 nodo right, left: ", walk.key(), T2.right(T2.root()).key(), T2.left(T2.root()).key())
@@ -105,6 +107,8 @@ class MyRedBlackTreeMap(RedBlackTreeMap):
             print("T2 nodo right, left: ", walk.key(), T2.right(T2.root()).key(), T2.left(T2.root()).key())
 
         if self.left(walk) is not None:
+            if T1.root() is None:
+                pass
             ultimateT1._node._right = walk._node._left
             walk._node._left._parent = ultimateT1._node
             print("T1 nodo right, left: ", walk.key(), T1.right(T1.root()).key(), T1.left(T1.root()).key())
@@ -253,7 +257,6 @@ class MyRedBlackTreeMap(RedBlackTreeMap):
 
 
 # ----SPLIT----
-<<<<<<< HEAD
 
 def color(T1, p):
     color = ""
@@ -263,8 +266,6 @@ def color(T1, p):
         color = "BLACK"
     return color
 print("--------------TEST SPLIT------------------")
-=======
->>>>>>> bddeb7a820e399ce68b92175434c4076abd942dc
 print("Test Split\n")
 rbt1 = MyRedBlackTreeMap()
 rbt2 = MyRedBlackTreeMap()
@@ -279,13 +280,13 @@ for i in rbt1.preorder():
 
 print("\n")
 
-T1,T2 = rbt1.split(11)
+T1,T2 = rbt1.split(20)
 
 for i in T1.preorder():
-    print(i.key())
+    print(i.key(), color(T1,i))
 print("\n")
 for k in T2.preorder():
-    print(k.key())
+    print(k.key(), color(T2,k))
 
 
 print("Test Split 2 \n")
@@ -300,10 +301,10 @@ print("\n")
 T1,T2 = rbt2.split(20)
 
 for i in T1.preorder():
-    print(i.key())
+    print(i.key(),color(T1,i))
 print("\n")
 for k in T2.preorder():
-    print(k.key())
+    print(k.key(),color(T2,k))
 
 
 
@@ -362,8 +363,6 @@ print("t2")
 for j in t2.inorder():
     print(j.key(),color(t2,j))
 print("\n")
-
-
 
 
 print("t4")
