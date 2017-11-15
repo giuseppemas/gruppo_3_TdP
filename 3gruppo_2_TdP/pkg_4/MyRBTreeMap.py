@@ -28,9 +28,9 @@ class MyRedBlackTreeMap(RedBlackTreeMap):
             return T1,T2
         #go right
         elif walk.key() < k:
-            info = self.min_blackdep(walk)
-            blackD_T1 = info[1]
-            blackD_T2 = 0
+            #info = self.min_blackdep(walk)
+            #blackD_T1 = info[1]
+            #blackD_T2 = 0
             T1._root = walk._node
             T1._root._red = False
             walk = self.right(walk)
@@ -56,7 +56,7 @@ class MyRedBlackTreeMap(RedBlackTreeMap):
                             print("T2 root: ", T2.root().key())
                             T2._root._red = False
                             ultimateT2 = T2.root()
-                            blackD_T2 = T2.max_blackdep(ultimateT2)[1]
+                            #blackD_T2 = T2.max_blackdep(ultimateT2)[1]
                             T2._size =1
                         else:
                             ultimateT2 = walk
@@ -64,8 +64,8 @@ class MyRedBlackTreeMap(RedBlackTreeMap):
                         print("T2 nodo right, left: ", walk.key(), T2.right(T2.root()).key(), T2.left(T2.root()).key())
 
         else: #go left k< walk.key()
-            info = self.max_blackdep(walk)
-            blackD_T2 = info[1]
+            #info = self.max_blackdep(walk)
+            #blackD_T2 = info[1]
             T2._root = walk._node
             T2._root._red = False
             walk = self.left(walk)
@@ -94,25 +94,36 @@ class MyRedBlackTreeMap(RedBlackTreeMap):
                         walk = self.right(walk)
 
         print("FINE WHILE\n")
+
         if self.right(walk) is not None:
+            if not self._is_red(walk):
+                walk._node._right._red = False
             if T2.root() is None:
-                pass
-            ultimateT2._node._left = walk._node._right #NON ASSEGNAMO LA T2.root
-            walk._node._right._parent = ultimateT2._node
-            print("T1 nodo right, left: ", walk.key(), T1.right(T1.root()).key(), T1.left(T1.root()).key())
-            print("T2 nodo right, left: ", walk.key(), T2.right(T2.root()).key(), T2.left(T2.root()).key())
+                T2._root = walk._node._right
+                T2._root._red = False
+                T2._size = 1
+            else:
+                ultimateT2._node._left = walk._node._right #NON ASSEGNAMO LA T2.root
+                walk._node._right._parent = ultimateT2._node
+            #print("T1 nodo right, left: ", walk.key(), T1.right(T1.root()).key(), T1.left(T1.root()).key())
+            #print("T2 nodo right, left: ", walk.key(), T2.right(T2.root()).key(), T2.left(T2.root()).key())
         else:
             ultimateT2._node._left = None
-            print("T1 nodo right, left: ", walk.key(), T1.right(T1.root()).key(), T1.left(T1.root()).key())
-            print("T2 nodo right, left: ", walk.key(), T2.right(T2.root()).key(), T2.left(T2.root()).key())
+            #print("T1 nodo right, left: ", walk.key(), T1.right(T1.root()).key(), T1.left(T1.root()).key())
+            #print("T2 nodo right, left: ", walk.key(), T2.right(T2.root()).key(), T2.left(T2.root()).key())
 
         if self.left(walk) is not None:
+            if not self._is_red(walk):
+                walk._node._left._red = False
             if T1.root() is None:
-                pass
-            ultimateT1._node._right = walk._node._left
-            walk._node._left._parent = ultimateT1._node
-            print("T1 nodo right, left: ", walk.key(), T1.right(T1.root()).key(), T1.left(T1.root()).key())
-            print("T2 nodo right, left: ", walk.key(), T2.right(T2.root()).key(), T2.left(T2.root()).key())
+                T1._root = walk._node._left
+                T1._root._red = False
+                T2._size = 1
+            else:
+                ultimateT1._node._right = walk._node._left
+                walk._node._left._parent = ultimateT1._node
+            #print("T1 nodo right, left: ", walk.key(), T1.right(T1.root()).key(), T1.left(T1.root()).key())
+            #print("T2 nodo right, left: ", walk.key(), T2.right(T2.root()).key(), T2.left(T2.root()).key())
         else:
             ultimateT1._node._right = None
         # delete Key
@@ -194,6 +205,7 @@ class MyRedBlackTreeMap(RedBlackTreeMap):
             if diffBD == 0:
                 pos = self._make_position(self._Node(T1_info[0]._node._element))
                 pos._node._red = False
+                T1.delete(T1_info[0])
                 self._concatene(pos, self, T1)
             elif diffBD > 0:
                 black = T_info[1]
