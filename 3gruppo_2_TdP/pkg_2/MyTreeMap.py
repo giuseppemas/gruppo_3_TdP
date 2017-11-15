@@ -139,7 +139,7 @@ for k in t.inorder():
     else:
         print("result before", resultbefore.key(), "Position", p.key(), "result after", resultafter.key())
 
-print("\n--Test TreeMap delitem--")
+print("\n--Test TreeMap delitem (9)--")
 t.__delitem__(9)
 p1=t.find_position(10)
 p2=t.find_position(8)
