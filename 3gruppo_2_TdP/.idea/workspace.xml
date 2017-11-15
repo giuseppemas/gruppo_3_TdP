@@ -23,17 +23,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MyRBTreeMap.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MyRBTreeMap.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pkg_4/MyRBTreeMap.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1734">
-              <caret line="284" column="41" lean-forward="true" selection-start-line="284" selection-start-column="41" selection-end-line="284" selection-end-column="41" />
+            <state relative-caret-position="294">
+              <caret line="47" column="39" lean-forward="true" selection-start-line="47" selection-start-column="39" selection-end-line="47" selection-end-column="39" />
               <folding>
-                <element signature="e#5036#5407#0" expanded="false" />
-                <element signature="e#5448#5822#0" expanded="false" />
-                <element signature="e#5870#6832#0" expanded="false" />
-                <element signature="e#6869#9394#0" expanded="false" />
-                <element signature="e#9461#10381#0" expanded="false" />
+                <element signature="e#6279#7241#0" expanded="false" />
+                <element signature="e#7278#9803#0" expanded="false" />
+                <element signature="e#9870#10790#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -52,7 +50,7 @@
       <file leaf-file-name="MyTreeMap.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pkg_2/MyTreeMap.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-267">
+            <state relative-caret-position="-216">
               <caret line="82" column="60" lean-forward="false" selection-start-line="82" selection-start-column="52" selection-end-line="82" selection-end-column="60" />
               <folding />
             </state>
@@ -69,11 +67,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="red_black_tree.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="red_black_tree.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/TdP_collections/map/red_black_tree.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
-              <caret line="41" column="18" lean-forward="false" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="18" />
+            <state relative-caret-position="314">
+              <caret line="65" column="30" lean-forward="false" selection-start-line="65" selection-start-column="30" selection-end-line="65" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -304,7 +302,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6687697" sideWeight="0.5058565" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.52781844" sideWeight="0.4941435" order="4" side_tool="true" content_ui="tabs" x="-245" y="236" width="1366" height="714" />
+      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.52781844" sideWeight="0.4941435" order="4" side_tool="true" content_ui="tabs" x="-245" y="236" width="1366" height="714" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -327,7 +325,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="3" />
+      <option name="time" value="4" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
@@ -699,19 +697,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pkg_2/MyTreeMap.py">
+    <entry file="file://$PROJECT_DIR$/pkg_4/MyRBTreeMap.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-267">
-          <caret line="82" column="60" lean-forward="false" selection-start-line="82" selection-start-column="52" selection-end-line="82" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TdP_collections/map/red_black_tree.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="41" column="18" lean-forward="false" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="18" />
-          <folding />
+        <state relative-caret-position="294">
+          <caret line="47" column="39" lean-forward="true" selection-start-line="47" selection-start-column="39" selection-end-line="47" selection-end-column="39" />
+          <folding>
+            <element signature="e#6279#7241#0" expanded="false" />
+            <element signature="e#7278#9803#0" expanded="false" />
+            <element signature="e#9870#10790#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -719,6 +713,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="549">
           <caret line="96" column="0" lean-forward="false" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg_2/MyTreeMap.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-216">
+          <caret line="82" column="60" lean-forward="false" selection-start-line="82" selection-start-column="52" selection-end-line="82" selection-end-column="60" />
           <folding />
         </state>
       </provider>
@@ -731,17 +733,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pkg_4/MyRBTreeMap.py">
+    <entry file="file://$PROJECT_DIR$/TdP_collections/map/red_black_tree.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1734">
-          <caret line="284" column="41" lean-forward="true" selection-start-line="284" selection-start-column="41" selection-end-line="284" selection-end-column="41" />
-          <folding>
-            <element signature="e#5036#5407#0" expanded="false" />
-            <element signature="e#5448#5822#0" expanded="false" />
-            <element signature="e#5870#6832#0" expanded="false" />
-            <element signature="e#6869#9394#0" expanded="false" />
-            <element signature="e#9461#10381#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="314">
+          <caret line="65" column="30" lean-forward="false" selection-start-line="65" selection-start-column="30" selection-end-line="65" selection-end-column="30" />
+          <folding />
         </state>
       </provider>
     </entry>

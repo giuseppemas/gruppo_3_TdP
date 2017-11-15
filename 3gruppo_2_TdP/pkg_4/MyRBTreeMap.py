@@ -28,7 +28,11 @@ class MyRedBlackTreeMap(RedBlackTreeMap):
             return T1,T2
         #go right
         elif walk.key() < k:
+            info = self.min_blackdep(walk)
+            blackD_T1 = info[1]
+            blackD_T2 = 0
             T1._root = walk._node
+            T1._root._red = False
             walk = self.right(walk)
             ultimateT1 = T1.root()
             T1._size=1
@@ -50,7 +54,9 @@ class MyRedBlackTreeMap(RedBlackTreeMap):
                         if T2._root is None:
                             T2._root = walk._node
                             print("T2 root: ", T2.root().key())
+                            T2._root._red = False
                             ultimateT2 = T2.root()
+                            blackD_T2 = T2.max_blackdep(walk)[1]
                             T2._size =1
                         else:
                             ultimateT2 = walk
@@ -58,7 +64,10 @@ class MyRedBlackTreeMap(RedBlackTreeMap):
                         print("T2 nodo right, left: ", walk.key(), T2.right(T2.root()).key(), T2.left(T2.root()).key())
 
         else: #go left k< walk.key()
+            info = self.max_blackdep(walk)
+            blackD_T2 = info[1]
             T2._root = walk._node
+            T2._root._red = False
             walk = self.left(walk)
             ultimateT2 = T2.root()
             T2._size = 1
@@ -77,6 +86,7 @@ class MyRedBlackTreeMap(RedBlackTreeMap):
                         # we need to cut the trees before going right
                         if T1._root is None:
                             T1._root = walk._node
+                            T1._root._red = False
                             ultimateT1 = T1.root()
                             T1._size = 1
                         else:
@@ -246,6 +256,7 @@ class MyRedBlackTreeMap(RedBlackTreeMap):
 
 
 # ----SPLIT----
+
 def color(T1, p):
     color = ""
     if T1._is_red(p):
@@ -253,7 +264,7 @@ def color(T1, p):
     else:
         color = "BLACK"
     return color
-
+print("--------------TEST SPLIT------------------")
 print("Test Split\n")
 rbt1 = MyRedBlackTreeMap()
 rbt2 = MyRedBlackTreeMap()
@@ -264,7 +275,7 @@ for i in range(len(chiaveSplit1)):
     rbt1.__setitem__(chiaveSplit1[i],i*i)
 
 for i in rbt1.preorder():
-    print(i.key(), end=" ")
+    print(i.key(), color(rbt1,i), end=" ")
 
 print("\n")
 
@@ -301,6 +312,7 @@ for k in T2.preorder():
 
 
 # ----FUSION----
+print("---------------FUSION--------------")
 t0 = MyRedBlackTreeMap()
 t1 = MyRedBlackTreeMap()
 t2 = MyRedBlackTreeMap()
@@ -333,21 +345,25 @@ for i in range(len(chiavi4)):
 for i in range(len(chiavi5)):
     t5.__setitem__(chiavi5[i],i*i)
 
-print("t0")
+print("t0\n")
 for i in t0.inorder():
-    print(i.key(), t0._is_red(i),end="; ")
-print("\nt3")
+    print(i.key(), color(t0,i))
+print("\nt3\n")
 for i in t3.inorder():
-    print(i.key() ,t3._is_red(i),end="; ")
+    print(i.key() ,color(t3,i))
 
-
+print("-------TEST t0.FUSION(t3)------")
 t0.fusion(t3)
+print("t0")
 for j in t0.inorder():
-    print(j.key(),t0._is_red(j),end="; ")
+    print(j.key(),color(t0,j))
 print("\n")
+
+print("-------TEST t2.FUSION(t1)------")
 t2.fusion(t1)
+print("t2")
 for j in t2.inorder():
-    print(j.key(),t2._is_red(j), end="; ")
+    print(j.key(),color(t2,j))
 print("\n")
 
 
@@ -355,12 +371,13 @@ print("\n")
 
 print("t4")
 for i in t4.inorder():
-    print(i.key(), t4._is_red(i),end="; ")
-print("\nt5")
+    print(i.key(), color(t4,i))
+print("\nt5\n")
 for i in t5.inorder():
-    print(i.key() ,t5._is_red(i),end="; ")
-
+    print(i.key() ,color(t5,i))
+print("-------TEST t4.FUSION(t5)------")
 t4.fusion(t5)
+print("t5")
 for l in t5.inorder():
-    print(l.key(), t5._is_red(l),end="; ")
+    print(l.key(), color(t5,l))
 print("\n")
