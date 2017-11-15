@@ -26,9 +26,15 @@
       <file leaf-file-name="MyRBTreeMap.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pkg_4/MyRBTreeMap.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="200" column="0" lean-forward="false" selection-start-line="200" selection-start-column="0" selection-end-line="200" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="402">
+              <caret line="65" column="32" lean-forward="true" selection-start-line="65" selection-start-column="32" selection-end-line="65" selection-end-column="32" />
+              <folding>
+                <element signature="e#4875#5246#0" expanded="false" />
+                <element signature="e#5287#5661#0" expanded="false" />
+                <element signature="e#5709#6671#0" expanded="false" />
+                <element signature="e#6708#9233#0" expanded="false" />
+                <element signature="e#9300#10220#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -38,7 +44,10 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1394">
               <caret line="82" column="60" lean-forward="false" selection-start-line="82" selection-start-column="52" selection-end-line="82" selection-end-column="60" />
-              <folding />
+              <folding>
+                <marker date="1510755572711" expanded="true" signature="5179:6718" ph="..." />
+                <marker date="1510755572711" expanded="true" signature="5839:6718" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -298,7 +307,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6687697" sideWeight="0.5058565" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5190337" sideWeight="0.4941435" order="4" side_tool="true" content_ui="tabs" x="-245" y="236" width="1366" height="714" />
+      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5190337" sideWeight="0.4941435" order="4" side_tool="true" content_ui="tabs" x="-245" y="236" width="1366" height="714" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -352,7 +361,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1326">
           <caret line="78" column="34" lean-forward="true" selection-start-line="78" selection-start-column="34" selection-end-line="78" selection-end-column="34" />
-          <folding />
+          <folding>
+            <marker date="1510755572711" expanded="true" signature="5179:6718" ph="..." />
+            <marker date="1510755572711" expanded="true" signature="5839:6718" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -425,7 +437,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1479">
           <caret line="87" column="22" lean-forward="false" selection-start-line="87" selection-start-column="22" selection-end-line="87" selection-end-column="22" />
-          <folding />
+          <folding>
+            <marker date="1510755572711" expanded="true" signature="5179:6718" ph="..." />
+            <marker date="1510755572711" expanded="true" signature="5839:6718" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -473,7 +488,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2244">
           <caret line="132" column="20" lean-forward="false" selection-start-line="132" selection-start-column="20" selection-end-line="132" selection-end-column="20" />
-          <folding />
+          <folding>
+            <marker date="1510755572711" expanded="true" signature="5179:6718" ph="..." />
+            <marker date="1510755572711" expanded="true" signature="5839:6718" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -514,7 +532,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1510755572711" expanded="true" signature="5179:6718" ph="..." />
+            <marker date="1510755572711" expanded="true" signature="5839:6718" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -544,7 +565,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="4" lean-forward="true" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
-          <folding />
+          <folding>
+            <marker date="1510755572711" expanded="true" signature="5179:6718" ph="..." />
+            <marker date="1510755572711" expanded="true" signature="5839:6718" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -584,7 +608,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="24" lean-forward="true" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
-          <folding />
+          <folding>
+            <marker date="1510755572711" expanded="true" signature="5179:6718" ph="..." />
+            <marker date="1510755572711" expanded="true" signature="5839:6718" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -695,7 +722,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1394">
           <caret line="82" column="60" lean-forward="false" selection-start-line="82" selection-start-column="52" selection-end-line="82" selection-end-column="60" />
-          <folding />
+          <folding>
+            <marker date="1510755572711" expanded="true" signature="5179:6718" ph="..." />
+            <marker date="1510755572711" expanded="true" signature="5839:6718" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -727,9 +757,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pkg_4/MyRBTreeMap.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="200" column="0" lean-forward="false" selection-start-line="200" selection-start-column="0" selection-end-line="200" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="402">
+          <caret line="65" column="32" lean-forward="true" selection-start-line="65" selection-start-column="32" selection-end-line="65" selection-end-column="32" />
+          <folding>
+            <element signature="e#4875#5246#0" expanded="false" />
+            <element signature="e#5287#5661#0" expanded="false" />
+            <element signature="e#5709#6671#0" expanded="false" />
+            <element signature="e#6708#9233#0" expanded="false" />
+            <element signature="e#9300#10220#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
