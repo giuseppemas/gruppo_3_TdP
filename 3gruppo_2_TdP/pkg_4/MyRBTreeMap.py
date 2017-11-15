@@ -71,8 +71,8 @@ class MyRedBlackTreeMap(RedBlackTreeMap):
                         if walk._node._parent != ultimateT2._node:
                             walk._node._parent = ultimateT2._node
                             ultimateT2._node._left = walk._node
-                        walk = self.left(walk)
                         ultimateT2 = walk
+                        walk = self.left(walk)
                     else:
                         # we need to cut the trees before going right
                         if T1._root is None:
@@ -84,6 +84,7 @@ class MyRedBlackTreeMap(RedBlackTreeMap):
                         walk = self.right(walk)
 
         print("FINE WHILE\n")
+        print("walk", walk.key(), "ultimateT1",ultimateT1.key(), "ultimateT2", ultimateT2.key())
         if self.right(walk) is not None:
             ultimateT2._node._left = walk._node._right
             walk._node._right._parent = ultimateT2._node
@@ -91,6 +92,7 @@ class MyRedBlackTreeMap(RedBlackTreeMap):
             print("T2 nodo right, left: ", walk.key(), T2.right(T2.root()).key(), T2.left(T2.root()).key())
         else:
             ultimateT2._node._left = None
+            #print(ultimateT2._node._left._node._element._key)
             print("T1 nodo right, left: ", walk.key(), T1.right(T1.root()).key(), T1.left(T1.root()).key())
             print("T2 nodo right, left: ", walk.key(), T2.right(T2.root()).key(), T2.left(T2.root()).key())
 
@@ -101,6 +103,7 @@ class MyRedBlackTreeMap(RedBlackTreeMap):
             print("T2 nodo right, left: ", walk.key(), T2.right(T2.root()).key(), T2.left(T2.root()).key())
         else:
             ultimateT1._node._right = None
+
         # delete Key
         walk._node._parent = None
         walk._node._left = None
@@ -243,6 +246,14 @@ class MyRedBlackTreeMap(RedBlackTreeMap):
 
 
 # ----SPLIT----
+def color(T1, p):
+    color = ""
+    if T1._is_red(p):
+        color = "RED"
+    else:
+        color = "BLACK"
+    return color
+
 print("Test Split\n")
 rbt1 = MyRedBlackTreeMap()
 rbt2 = MyRedBlackTreeMap()
@@ -260,10 +271,12 @@ print("\n")
 T1,T2 = rbt1.split(11)
 
 for i in T1.preorder():
-    print(i.key())
+    col= color(T1,i)
+    print(i.key(), col)
 print("\n")
 for k in T2.preorder():
-    print(k.key())
+    col = color(T2, k)
+    print(k.key(), col)
 
 
 print("Test Split 2 \n")
@@ -278,10 +291,11 @@ print("\n")
 T1,T2 = rbt2.split(20)
 
 for i in T1.preorder():
-    print(i.key())
+    col = color(T1, i)
+    print(i.key(), col)
 print("\n")
 for k in T2.preorder():
-    print(k.key())
+    print(k.key(), color(T2, k))
 
 
 
